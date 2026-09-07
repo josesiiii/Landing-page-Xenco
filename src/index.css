@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-xenco-paper text-xenco-ink font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* Botón glass — referencia: 21st.dev @easemize sign-up */
+.btn-glass {
+  @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+    font-display font-medium text-white
+    backdrop-blur-md bg-white/10 border border-white/25
+    shadow-[0_4px_30px_rgba(0,0,0,0.15)]
+    transition-all duration-300 ease-out;
+}
+.btn-glass:hover {
+  @apply bg-white/20 border-white/40 -translate-y-0.5;
+}
+.btn-glass:focus-visible {
+  outline: 2px solid theme('colors.xenco.gold');
+  outline-offset: 3px;
+}
+
+.btn-glass-solid {
+  @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+    font-display font-medium text-xenco-ink
+    bg-xenco-gold shadow-[0_4px_20px_rgba(233,185,73,0.4)]
+    transition-all duration-300 ease-out;
+}
+.btn-glass-solid:hover {
+  @apply -translate-y-0.5 shadow-[0_8px_28px_rgba(233,185,73,0.55)];
+}
+
+/* Reduced motion: respeta la preferencia del usuario en toda la app */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

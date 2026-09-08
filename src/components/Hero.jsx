@@ -3,6 +3,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Mail, ChevronDown, Code2 } from "lucide-react";
 import InfiniteClientSlider from "./InfiniteClientSlider.jsx";
+import { CursorDrivenParticleTypography } from "./ParticleTypography.jsx";
 
 // Importación dinámica para diferir la compilación del Shader/WebGL
 const ShaderBackground = lazy(() => import("./ShaderBackground.jsx"));
@@ -19,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#0A1513] text-slate-100 selection:bg-indigo-500 selection:text-white"
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#0A1513] text-slate-100 selection:bg-[#12967F]/50-500 selection:text-white"
     >
       {/* 1. Fondo shader diferido */}
       {mounted ? (
@@ -36,17 +37,40 @@ export default function Hero() {
       {/* 3. Contenido textual e interactivo */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 text-center pt-28 pb-36 pointer-events-none">
         <div className="pointer-events-auto flex flex-col items-center max-w-4xl w-full">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-sm mb-6 backdrop-blur-md animate-pulse">
-            <Code2 className="w-4 h-4" />
-            <span>Soluciones de Software & Transformación Digital</span>
-          </div>
+          
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+          {/* TÍTULO CON PARTÍCULAS INTERACTIVAS */}
+       {/* TÍTULO CON PARTÍCULAS INTERACTIVAS */}
+{/* Contenedor más amplio con max-w-6xl o max-w-7xl */}
+{/* TÍTULO EN PARTÍCULAS - RESPONSIVE */}
+<div className="w-full max-w-6xl mx-auto h-[280px] sm:h-[300px] md:h-[360px] my-2 ">
+  {/* Pantallas móviles: Una palabra abajo de otra */}
+  <div className="block sm:hidden w-full h-full">
+    <CursorDrivenParticleTypography
+      text={"XENCO\nS.A"}
+      fontSize={130}
+      particleDensity={4}
+      particleSize={1.6}
+    />
+  </div>
+
+  {/* Pantallas medianas y grandes: Todo en una sola línea */}
+  <div className="hidden sm:block w-full h-full">
+    <CursorDrivenParticleTypography
+      text="XENCO S.A"
+      fontSize={170}
+      particleDensity={4.5}
+      particleSize={1.8}
+    />
+  </div>
+</div>
+
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-6">
             Transformamos ideas en{" "}
             <span className="bg-gradient-to-r from-indigo-300 via-blue-200 to-teal-200 bg-clip-text text-transparent">
               software de alto impacto
             </span>
-          </h1>
+          </h2>
 
           <p className="max-w-2xl text-lg sm:text-xl text-slate-200 mb-8 leading-relaxed font-light">
             Desarrollamos soluciones empresariales a medida, arquitecturas escalables
@@ -56,11 +80,11 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-4 mb-14">
             <a
               href="#contacto"
-              className="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all shadow-lg shadow-indigo-600/25 flex items-center gap-2"
+              className="px-6 py-3 rounded-lg bg-[#12967F]/50 hover:bg-indigo-500 text-white font-medium transition-all shadow-lg shadow-indigo-600/25 flex items-center gap-2"
             >
               <Mail className="w-4 h-4" /> Contacto
             </a>
-            <a
+            <a  
               href="#proyectos"
               className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium transition-all backdrop-blur-md"
             >

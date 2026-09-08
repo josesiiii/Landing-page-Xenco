@@ -1,38 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 0. COLOR DE SELECCIÓN DE TEXTO (CIANO OSCURO) */
+::selection {
+  background-color: #0d5c53;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #0d5c53;
+  color: #ffffff;
+}
+
+/* 0. REDEFINICIÓN DE FUENTES GLOBALES */
+:root {
+  --font-instrument: 'Instrument Serif', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
 
 /* 1. CONFIGURACIÓN DEL VIEWPORT RAÍZ */
 html {
   scroll-behavior: smooth;
   background-color: #0A1513 !important;
-  /* Fuerza al navegador a no reservar un canal lateral gris/negro */
   scrollbar-gutter: auto;
   overflow-y: overlay;
+  max-width: 100vw;
+  overflow-x: hidden !important;
 }
 
 body {
-  /* Se eliminó bg-xenco-paper para evitar parches de color claro */
-  @apply text-xenco-ink font-body antialiased;
+  font-family: var(--font-montserrat);
+  color: theme('colors.xenco.ink');
   background-color: #0A1513 !important;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100vw;
+  overflow-x: hidden !important;
 }
 
-h1, h2, h3, h4 {
-  @apply font-display;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* Botón glass — referencia: 21st.dev @easemize sign-up */
+/* Encabezados de todas las secciones en Instrument Serif */
+main h1, main h2, main h3, main h4,
+section h1, section h2, section h3, section h4,
+footer h1, footer h2, footer h3, footer h4 {
+  font-family: var(--font-instrument) !important;
+}
+
+/* Mantiene la Navbar con Montserrat (o su fuente sans original) */
+header, header *,
+nav, nav * {
+  font-family: var(--font-montserrat) !important;
+}
+
+/* Botón glass */
 .btn-glass {
   @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
-    font-display font-medium text-white
+    font-medium text-white
     backdrop-blur-md bg-white/10 border border-white/25
     shadow-[0_4px_30px_rgba(0,0,0,0.15)]
     transition-all duration-300 ease-out;
+  font-family: var(--font-montserrat);
 }
+
 .btn-glass:hover {
   @apply bg-white/20 border-white/40 -translate-y-0.5;
 }
+
 .btn-glass:focus-visible {
   outline: 2px solid theme('colors.xenco.gold');
   outline-offset: 3px;
@@ -40,10 +79,12 @@ h1, h2, h3, h4 {
 
 .btn-glass-solid {
   @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
-    font-display font-medium text-xenco-ink
+    font-medium text-xenco-ink
     bg-xenco-gold shadow-[0_4px_20px_rgba(233,185,73,0.4)]
     transition-all duration-300 ease-out;
+  font-family: var(--font-montserrat);
 }
+
 .btn-glass-solid:hover {
   @apply -translate-y-0.5 shadow-[0_8px_28px_rgba(233,185,73,0.55)];
 }
@@ -75,7 +116,6 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(99, 220, 241, 0.85) !important;
   border-radius: 9999px !important;
-  /* Achica la píldora para que parezca un punto */
   border: 2px solid transparent !important;
   background-clip: content-box !important;
 }

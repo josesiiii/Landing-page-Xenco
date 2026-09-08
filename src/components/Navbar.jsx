@@ -84,7 +84,7 @@ export default function Navbar({ onOpenPolicies, onOpenLogin }) {
           width: scrolled ? '92%' : '100%',
           maxWidth: scrolled ? 980 : 1180,
           borderRadius: 999,
-          backgroundColor: scrolled ? 'rgba(16,28,27,0.85)' : 'rgba(16,28,27,0.55)',
+          backgroundColor: scrolled ? 'rgba(21, 126, 126, 0.46)' : 'rgba(21, 126, 126, 0.46)',
         }}
         transition={{ duration: 0.35, ease: 'easeOut' }}
         className="w-full flex items-center justify-between gap-4 px-5 py-2.5 backdrop-blur-lg border border-white/10 shadow-lg"

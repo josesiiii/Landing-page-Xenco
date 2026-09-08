@@ -22,14 +22,14 @@ function ClientLogo({ client }) {
 
   return (
     <div
-      className="flex items-center justify-center h-14 min-w-[160px] px-6 rounded-xl border border-xenco-teal/10 bg-white"
+      className="flex items-center justify-center h-14 min-w-[180px] px-6 rounded-xl border border-xenco-teal/10 bg-white"
       title={client.name}
     >
       <img
         src={client.logo}
         alt={client.name}
         onError={() => setErrored(true)}
-        className="max-h-8 max-w-[120px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+        className="max-h-8 max-w-[120px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-200"
       />
     </div>
   );
@@ -38,8 +38,13 @@ function ClientLogo({ client }) {
 export default function InfiniteClientSlider() {
   const loop = [...clients, ...clients];
 
-  return (
-    <div className="relative overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+return (
+    /* 
+       1. w-full o w-screen para forzar ancho completo.
+       2. Se ajustó el gradient a 2% y 98% para que los logos no se oculten antes de tiempo 
+          y aprovechen todo el ancho visible de la pantalla.
+    */
+    <div className="relative w-full overflow-hidden py-6 [mask-image:linear-gradient(to_right,transparent_0%,black_2%,black_40%,black_98%,transparent_100%)]">
       <motion.div
         className="flex items-center gap-6 w-max"
         animate={{ x: ['0%', '-50%'] }}

@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 1. CONFIGURACIÓN DEL VIEWPORT RAÍZ */
 html {
   scroll-behavior: smooth;
+  background-color: #0A1513 !important;
+  /* Fuerza al navegador a no reservar un canal lateral gris/negro */
+  scrollbar-gutter: auto;
+  overflow-y: overlay;
 }
 
 body {
-  @apply bg-xenco-paper text-xenco-ink font-body antialiased;
+  /* Se eliminó bg-xenco-paper para evitar parches de color claro */
+  @apply text-xenco-ink font-body antialiased;
+  background-color: #0A1513 !important;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4 {
@@ -40,7 +48,7 @@ h1, h2, h3, h4 {
   @apply -translate-y-0.5 shadow-[0_8px_28px_rgba(233,185,73,0.55)];
 }
 
-/* Reduced motion: respeta la preferencia del usuario en toda la app */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -48,4 +56,42 @@ h1, h2, h3, h4 {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* 2. SCROLLBAR FLOTANTE Y TRANSPARENTE (WEBKIT) */
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(99, 220, 241, 0.85) !important;
+  border-radius: 9999px !important;
+  /* Achica la píldora para que parezca un punto */
+  border: 2px solid transparent !important;
+  background-clip: content-box !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(129, 248, 238) !important;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-button {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 220, 241, 0.85) transparent;
 }

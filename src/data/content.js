@@ -52,6 +52,7 @@ export const clients = [
   { name: 'Ruta N', logo: 'src/assets/logos/logo_ruta.png' },
   { name: 'Plaza Mayor', logo: 'src/assets/logos/Logo_PlazaMayor_Medellín.png' },
   { name: 'Tecnológico de Antioquia', logo: 'src/assets/logos/TDEA.png' },
+  { name: 'Metrosalud', logo: 'src/assets/logos/Logo-ESE-Metrosalud-Redes-scaled-e1757352258926-1536x804.jpg' },
 ];
 
 export const services = [
@@ -104,10 +105,10 @@ export const testimonials = [
 
 // Placeholder — reemplazar con el equipo real (nombres, cargos, fotos).
 export const team = [
-  { name: 'Nombre Apellido', role: 'Gerente General' },
-  { name: 'Nombre Apellido', role: 'Líder de Desarrollo' },
-  { name: 'Nombre Apellido', role: 'Líder de Calidad y SIG' },
-  { name: 'Nombre Apellido', role: 'Líder Comercial' },
+  { name: 'Juliana', role: 'Directora administrativa', image: "src/assets/fotos/juliana.png" },
+  { name: 'Santi', role: 'Programador', image: "src/assets/fotos/santi.png" },
+  { name: 'Luz Marina', role: 'Gerente general', image: "src/assets/fotos/inge.png" },
+  { name: 'Viviana', role: 'Coordinadora de proyectos', image: "src/assets/fotos/vivi.png" },
 ];
 
 export const contact = {

@@ -7,6 +7,7 @@ const icons = [Layers, Boxes, ShieldCheck, ClipboardCheck];
 export default function Services() {
   return (
     <section id="conocimiento" className="py-28 px-6 bg-xenco-paper">
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from[#0A1513] via-white/40 to-transparent z-10 pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         <ScrollReveal className="max-w-2xl mb-14">
           <span className="text-xs tracking-[0.2em] uppercase text-xenco-teal font-medium">
@@ -36,6 +37,7 @@ export default function Services() {
           })}
         </div>
       </div>
+      
     </section>
   );
 }

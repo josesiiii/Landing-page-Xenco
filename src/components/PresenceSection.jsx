@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 
 // Carga diferida (Code Splitting)
-const RotatingEarth = lazy(() => import("./RotatingEarth"));
+const RotatingEarth = lazy(() => import("./PresenceSection/RotatingEarth"));
 
 export default function PresenceSection() {
   return (

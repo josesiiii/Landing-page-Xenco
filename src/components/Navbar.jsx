@@ -9,26 +9,9 @@ export default function Navbar({ onOpenPolicies, onOpenLogin }) {
   const [hovered, setHovered] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const navigationLinks = [
+const navigationLinks = [
     { label: 'Inicio', href: '#inicio' },
-    {
-      label: 'Nosotros',
-      href: '#nosotros',
-      subItems: [
-        { name: 'Quiénes somos', href: '#nosotros', icon: Info },
-        { name: 'Novedades', href: '#novedades', icon: Newspaper },
-        { name: 'Políticas', action: 'policies', icon: ShieldCheck },
-        { name: 'Canal de denuncias', href: '#canal-denuncias', icon: AlertCircle },
-      ],
-    },
-    {
-      label: 'Productos',
-      href: '#productos',
-      subItems: [
-        { name: 'Safix', desc: 'Sistema de gestión modular', href: '#safix', icon: Layers },
-        { name: 'SX advance', desc: 'Plataforma avanzada de salud', href: '#sx-advance', icon: Server },
-      ],
-    },
+      
     {
       label: 'Sectores',
       href: '#sectores',
@@ -40,8 +23,27 @@ export default function Navbar({ onOpenPolicies, onOpenLogin }) {
       ],
     },
     {
+      label: 'Nosotros',
+      href: '#nosotros',
+      subItems: [
+        { name: 'Quiénes somos', href: '#C../pages/AboutPage.jsx/quienes-somos', icon: Info }, // Apunta al id exacto dentro de AboutPage
+        { name: 'Novedades', href: '#novedades', icon: Newspaper },
+        { name: 'Políticas', action: 'policies', icon: ShieldCheck },
+        { name: 'Canal de denuncias', href: '#canal-denuncias', icon: AlertCircle },
+      ],
+    }, 
+    {
+      label: 'Productos',
+      href: '#conocimiento',
+      subItems: [
+        { name: 'Safix', desc: 'Sistema de gestión modular', href: '#safix', icon: Layers },
+        { name: 'SX advance', desc: 'Plataforma avanzada de salud', href: '#sx-advance', icon: Server },
+      ],
+    },
+  
+    {
       label: 'Recursos',
-      href: '#recursos',
+      href: '#presencia',
       subItems: [
         { name: 'Blog', href: '#blog', icon: BookOpen },
         { name: 'E-Learning', href: '#elearning', icon: ELearningIcon },

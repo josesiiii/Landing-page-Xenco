@@ -11,7 +11,7 @@ import LazyBoundary from '../components/LazyBoundary';
 const Sectores = lazy(() => import("../components/Sectores"));
 const About = lazy(() => import('../components/About'));
 const Services = lazy(() => import('../components/Services'));
-const PresenceSection = lazy(() => import("../components/PresenceSection/PresenceSection"));
+const PresenceSection = lazy(() => import("../components/PresenceSection"));
 const Testimonials = lazy(() => import('../components/Testimonials'));
 const Team = lazy(() => import('../components/Team'));
 const Contact = lazy(() => import('../components/Contact'));

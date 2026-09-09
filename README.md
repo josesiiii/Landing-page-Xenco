@@ -39,9 +39,6 @@ Abre `http://localhost:5173`.
 2. **Colores exactos**: en `tailwind.config.js`, sección `theme.extend.colors.xenco`,
    ajustar los HEX si tienes los oficiales del manual de marca (por ahora son
    una aproximación tomada de las capturas de la intranet).
-3. **Logo real**: hoy el logo es solo texto ("Xenco" con la X en dorado). Si
-   tienes el archivo del logo (SVG/PNG), reemplázalo en `Navbar.jsx`,
-   `Footer.jsx` y `LoginPage.jsx`.
 4. **Contenido de SGSST / SIG / Conocimiento / Registros**: hoy solo están
    como entradas de navegación (`policyLinks` en `content.js`) que apuntan a
    anclas `#`. Cuando me pases las capturas/texto de la intranet, armamos el
